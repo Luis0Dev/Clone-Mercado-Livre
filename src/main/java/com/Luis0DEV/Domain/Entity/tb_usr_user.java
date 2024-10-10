@@ -12,26 +12,17 @@ import lombok.Data;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import java.util.List;
 import java.util.UUID;
 
 @Entity
 @Data
-@Table(name="tb_usr_user", uniqueConstraints = {
-        @UniqueConstraint(columnNames = {
-                "usr_nickname"
-        }),
-        @UniqueConstraint(columnNames = {
-                "usr_email"
-        }),
-        @UniqueConstraint(columnNames = {
-                "usr_cpf_cnpj"
-        }),
-        @UniqueConstraint(columnNames = {
-                "usr_phone"
-        }),
-        @UniqueConstraint(columnNames = {
-                "usr_cnpj"
-        })
+@Table(name = "tb_usr_user", uniqueConstraints = {
+        @UniqueConstraint(columnNames = "usr_nickname"),
+        @UniqueConstraint(columnNames = "usr_email"),
+        @UniqueConstraint(columnNames = "usr_cpf_cnpj"),
+        @UniqueConstraint(columnNames = "usr_phone"),
+        @UniqueConstraint(columnNames = "usr_cnpj")
 })
 public class tb_usr_user {
     @Id
@@ -106,6 +97,9 @@ public class tb_usr_user {
     public String usr_cnpj;
     public String usr_status_seller;
 
+    @OneToMany(mappedBy = "prd_usr_user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    public List<tb_prd_product> usr_prd_product;
+
     //CONSTRUCTOR
     public tb_usr_user(){}
 
@@ -179,6 +173,9 @@ public class tb_usr_user {
     public String get_usr_status_seller() {
         return usr_status_seller;
     }
+    public List<tb_prd_product> get_usr_prd_product() {
+        return usr_prd_product;
+    }
 
     //SETTERS
     public void set_usr_id(UUID usr_id) {
@@ -249,5 +246,8 @@ public class tb_usr_user {
     }
     public void set_usr_status_seller(String usr_status_seller) {
         this.usr_status_seller = usr_status_seller;
+    }
+    public void set_usr_prd_product(List<tb_prd_product> usr_prd_product) {
+        this.usr_prd_product = usr_prd_product;
     }
 }
