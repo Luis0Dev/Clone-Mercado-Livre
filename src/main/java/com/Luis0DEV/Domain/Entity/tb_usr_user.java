@@ -53,18 +53,6 @@ public class tb_usr_user {
     @Pattern(regexp = "\\d{11}|\\d{14}", message = "The CPF must have 11 digits and the CNPJ must have 14 digits.")
     public String usr_cpf_cnpj;
 
-    @NotBlank(message = "Country is mandatory.")
-    public String usr_country;
-
-    @NotBlank(message = "State is mandatory.")
-    public String usr_state;
-
-    @NotBlank(message = "City is mandatory.")
-    public String usr_city;
-
-    @NotBlank(message = "Address is mandatory.")
-    public String usr_address;
-
     @NotBlank(message = "Zip code is mandatory.")
     @Pattern(regexp = "\\d{5}-\\d{3}", message = "ZIP code must be in the format 00000-000.")
     public String usr_zipcode;
@@ -124,18 +112,6 @@ public class tb_usr_user {
     }
     public String get_usr_cpf_cnpj() {
         return usr_cpf_cnpj;
-    }
-    public String get_usr_country() {
-        return usr_country;
-    }
-    public String get_usr_state() {
-        return usr_state;
-    }
-    public String get_usr_city() {
-        return usr_city;
-    }
-    public String get_usr_address() {
-        return usr_address;
     }
     public String get_usr_zipcode() {
         return usr_zipcode;
@@ -198,18 +174,6 @@ public class tb_usr_user {
     }
     public void set_usr_cpf_cnpj(String usr_cpf_cnpj) {
         this.usr_cpf_cnpj = usr_cpf_cnpj;
-    }
-    public void set_usr_country(String usr_country) {
-        this.usr_country = usr_country;
-    }
-    public void set_usr_state(String usr_state) {
-        this.usr_state = usr_state;
-    }
-    public void set_usr_city(String usr_city) {
-        this.usr_city = usr_city;
-    }
-    public void set_usr_address(String usr_address) {
-        this.usr_address = usr_address;
     }
     public void set_usr_zipcode(String usr_zipcode) {
         this.usr_zipcode = usr_zipcode;
