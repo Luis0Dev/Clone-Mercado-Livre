@@ -88,6 +88,9 @@ public class tb_usr_user {
     @OneToMany(mappedBy = "prd_usr_user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     public List<tb_prd_product> usr_prd_product;
 
+    @OneToMany(mappedBy = "add_usr_user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    public List<tb_add_address> usr_add_address;
+
     //CONSTRUCTOR
     public tb_usr_user(){}
 
@@ -152,6 +155,9 @@ public class tb_usr_user {
     public List<tb_prd_product> get_usr_prd_product() {
         return usr_prd_product;
     }
+    public List<tb_add_address> get_usr_add_address() {
+        return usr_add_address;
+    }
 
     //SETTERS
     public void set_usr_id(UUID usr_id) {
@@ -213,5 +219,8 @@ public class tb_usr_user {
     }
     public void set_usr_prd_product(List<tb_prd_product> usr_prd_product) {
         this.usr_prd_product = usr_prd_product;
+    }
+    public void set_usr_add_address(List<tb_add_address> usr_add_address) {
+        this.usr_add_address = usr_add_address;
     }
 }

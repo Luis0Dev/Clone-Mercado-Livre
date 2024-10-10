@@ -1,9 +1,6 @@
 package com.Luis0DEV.Domain.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
@@ -33,6 +30,10 @@ public class tb_add_address {
     @NotBlank(message = "Number is mandatory.")
     public int add_number;
 
+    @ManyToOne
+    @JoinColumn(name = "usr_id", referencedColumnName = "usr_id")
+    public tb_usr_user add_usr_user;
+
     //CONSTRUCTOR
     public tb_add_address(){}
 
@@ -55,6 +56,9 @@ public class tb_add_address {
     public int get_add_number() {
         return add_number;
     }
+    public tb_usr_user get_add_usr_user() {
+        return add_usr_user;
+    }
 
     //SETTERS
     public void set_add_id(UUID add_id) {
@@ -74,5 +78,8 @@ public class tb_add_address {
     }
     public void set_add_number(int add_number) {
         this.add_number = add_number;
+    }
+    public void set_add_usr_user(tb_usr_user add_usr_user) {
+        this.add_usr_user = add_usr_user;
     }
 }
