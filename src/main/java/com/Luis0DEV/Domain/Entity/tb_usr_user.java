@@ -1,14 +1,13 @@
 package com.Luis0DEV.Domain.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+
+import lombok.Data;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -16,6 +15,24 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
+@Data
+@Table(name="tb_usr_user", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {
+                "usr_nickname"
+        }),
+        @UniqueConstraint(columnNames = {
+                "usr_email"
+        }),
+        @UniqueConstraint(columnNames = {
+                "usr_cpf_cnpj"
+        }),
+        @UniqueConstraint(columnNames = {
+                "usr_phone"
+        }),
+        @UniqueConstraint(columnNames = {
+                "usr_cnpj"
+        })
+})
 public class tb_usr_user {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
