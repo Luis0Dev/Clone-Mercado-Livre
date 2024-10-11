@@ -53,10 +53,6 @@ public class tb_usr_user {
     @Pattern(regexp = "\\d{11}|\\d{14}", message = "The CPF must have 11 digits and the CNPJ must have 14 digits.")
     public String usr_cpf_cnpj;
 
-    @NotBlank(message = "Zip code is mandatory.")
-    @Pattern(regexp = "\\d{5}-\\d{3}", message = "ZIP code must be in the format 00000-000.")
-    public String usr_zipcode;
-
     @NotBlank(message = "Phone is mandatory.")
     @Pattern(regexp = "\\(\\d{2}\\) \\d{4,5}-\\d{4}", message = "The phone must be in the format (XX) XXXXX-XXXX .")
     public String usr_phone;
@@ -115,9 +111,6 @@ public class tb_usr_user {
     }
     public String get_usr_cpf_cnpj() {
         return usr_cpf_cnpj;
-    }
-    public String get_usr_zipcode() {
-        return usr_zipcode;
     }
     public String get_usr_phone() {
         return usr_phone;
@@ -180,9 +173,6 @@ public class tb_usr_user {
     }
     public void set_usr_cpf_cnpj(String usr_cpf_cnpj) {
         this.usr_cpf_cnpj = usr_cpf_cnpj;
-    }
-    public void set_usr_zipcode(String usr_zipcode) {
-        this.usr_zipcode = usr_zipcode;
     }
     public void set_usr_phone(String usr_phone) {
         this.usr_phone = usr_phone;

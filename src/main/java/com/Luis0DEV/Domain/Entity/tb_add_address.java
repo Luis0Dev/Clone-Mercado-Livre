@@ -3,6 +3,7 @@ package com.Luis0DEV.Domain.Entity;
 import jakarta.persistence.*;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 import java.util.UUID;
@@ -26,6 +27,10 @@ public class tb_add_address {
 
     @NotBlank(message = "Address is mandatory.")
     public String add_address;
+
+    @NotBlank(message = "Zip code is mandatory.")
+    @Pattern(regexp = "\\d{5}-\\d{3}", message = "ZIP code must be in the format 00000-000.")
+    public String add_zipcode;
 
     @NotBlank(message = "Number is mandatory.")
     public int add_number;
@@ -53,6 +58,9 @@ public class tb_add_address {
     public String get_add_address() {
         return add_address;
     }
+    public String get_add_zipcode() {
+        return add_zipcode;
+    }
     public int get_add_number() {
         return add_number;
     }
@@ -75,6 +83,9 @@ public class tb_add_address {
     }
     public void set_add_address(String add_address) {
         this.add_address = add_address;
+    }
+    public void set_add_zipcode(String add_zipcode) {
+        this.add_zipcode = add_zipcode;
     }
     public void set_add_number(int add_number) {
         this.add_number = add_number;
