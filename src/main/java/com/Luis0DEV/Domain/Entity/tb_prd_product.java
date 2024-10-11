@@ -36,8 +36,8 @@ public class tb_prd_product {
     public LocalDateTime prd_dt_product_date_update;
 
     @ManyToOne
-    @JoinColumn(name = "usr_id", referencedColumnName = "usr_id")
-    public tb_usr_user prd_tb_usr_user;
+    @JoinColumn(name = "usr_n_id", referencedColumnName = "usr_n_id")
+    public tb_usr_user prd_c_usr_user;
 
     //CONSTRUCTOR
     public tb_prd_product(){}
@@ -68,7 +68,7 @@ public class tb_prd_product {
         return prd_dt_product_date_update;
     }
     public  tb_usr_user get_prd_usr_user() {
-        return prd_tb_usr_user;
+        return prd_c_usr_user;
     }
 
     //SETTERS
@@ -96,7 +96,7 @@ public class tb_prd_product {
     public void set_prd_product_date_update(LocalDateTime prd_dt_product_date_update) {
         this.prd_dt_product_date_update = prd_dt_product_date_update;
     }
-    public void set_prd_usr_user(tb_usr_user prd_tb_usr_user) {
-        this.prd_tb_usr_user = prd_tb_usr_user;
+    public void set_prd_usr_user(tb_usr_user prd_c_usr_user) {
+        this.prd_c_usr_user = prd_c_usr_user;
     }
 }

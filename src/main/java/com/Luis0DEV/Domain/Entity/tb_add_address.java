@@ -36,8 +36,8 @@ public class tb_add_address {
     public int add_c_number;
 
     @ManyToOne
-    @JoinColumn(name = "usr_id", referencedColumnName = "usr_id")
-    public tb_usr_user add_tb_usr_user;
+    @JoinColumn(name = "usr_n_id", referencedColumnName = "usr_n_id")
+    public tb_usr_user add_c_usr_user;
 
     //CONSTRUCTOR
     public tb_add_address(){}
@@ -65,7 +65,7 @@ public class tb_add_address {
         return add_c_number;
     }
     public tb_usr_user get_add_usr_user() {
-        return add_tb_usr_user;
+        return add_c_usr_user;
     }
 
     //SETTERS
@@ -90,7 +90,7 @@ public class tb_add_address {
     public void set_add_number(int add_c_number) {
         this.add_c_number = add_c_number;
     }
-    public void set_add_usr_user(tb_usr_user add_tb_usr_user) {
-        this.add_tb_usr_user = add_tb_usr_user;
+    public void set_add_usr_user(tb_usr_user add_c_usr_user) {
+        this.add_c_usr_user = add_c_usr_user;
     }
 }
